@@ -5,7 +5,7 @@ jobs:
     strategy:
       matrix:
         go-version: [1.18.x]
-        os: [ubuntu-latest]
+        os: [ubuntu-18.04.6]
     runs-on: self-hosted
     steps:
     - name: Install Go
@@ -53,7 +53,7 @@ jobs:
   # notifies that all test jobs are finished.
   finish:
     needs: test
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: shogo82148/actions-goveralls@v1
         with:
@@ -61,7 +61,7 @@ jobs:
 
   e2e-test:
     name: e2e test
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     env:
       NUMBER_OF_COMPUTE_NODES: 5
     steps:

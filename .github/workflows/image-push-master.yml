@@ -8,7 +8,7 @@ env:
 jobs:
   push-amd64:
     name: Image push/amd64
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Check out code into the Go module directory
         uses: actions/checkout@v2
