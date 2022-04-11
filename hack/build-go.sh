@@ -21,13 +21,13 @@ if $hasGit; then
     # add remote repo
 #    git config --global user.email "bingzhe.sun@daocloud.io"
 #    git config --global user.name "bzsuni"
-
-    git init
-    git remote add origin git@github.com:bzsuni/whereabouts.git
-    touch TEST.md
-    git add -A
-    git commit -m "add remote repo and touch TEST.md"
-
+    if [[ `git remote` != "origin" ]]; then
+      git init
+      git remote add origin git@github.com:bzsuni/whereabouts.git
+      touch TEST.md
+      git add -A
+      git commit -m "add remote repo and touch TEST.md"
+    fi
 
 
     GIT_SHA=$(git rev-parse --short HEAD)
