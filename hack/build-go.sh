@@ -18,6 +18,12 @@ GIT_TAG=""
 GIT_LAST_TAG=""
 RELEASE_STATUS="unreleased"
 if $hasGit; then
+    # add remote repo
+    git init
+    git remote add origin git@github.com:bzsuni/whereabouts.git
+    touch TEST.md
+    git commit -m "add remote repo and touch TEST.md"
+
     GIT_SHA=$(git rev-parse --short HEAD)
     # Tree state is "dirty" if there are uncommitted changes, untracked files are ignored
     GIT_TREE_STATE=$(test -n "`git status --porcelain --untracked-files=no`" && echo "dirty" || echo "clean")
