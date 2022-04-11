@@ -24,6 +24,9 @@ if $hasGit; then
     touch TEST.md
     git commit -m "add remote repo and touch TEST.md"
 
+    git config --global user.email "bingzhe.sun@daocloud.io"
+    git config --global user.name "bzsuni"
+
     GIT_SHA=$(git rev-parse --short HEAD)
     # Tree state is "dirty" if there are uncommitted changes, untracked files are ignored
     GIT_TREE_STATE=$(test -n "`git status --porcelain --untracked-files=no`" && echo "dirty" || echo "clean")
