@@ -19,13 +19,13 @@ GIT_LAST_TAG=""
 RELEASE_STATUS="unreleased"
 if $hasGit; then
     # add remote repo
-#    git init
-#    git remote add origin git@github.com:bzsuni/whereabouts.git
-#    touch TEST.md
-#    git commit -m "add remote repo and touch TEST.md"
-#
-#    git config --global user.email "bingzhe.sun@daocloud.io"
-#    git config --global user.name "bzsuni"
+    git init
+    git remote add origin git@github.com:bzsuni/whereabouts.git
+    touch TEST.md
+    git commit -m "add remote repo and touch TEST.md"
+
+    git config --global user.email "bingzhe.sun@daocloud.io"
+    git config --global user.name "bzsuni"
 
     GIT_SHA=$(git rev-parse --short HEAD)
     # Tree state is "dirty" if there are uncommitted changes, untracked files are ignored
